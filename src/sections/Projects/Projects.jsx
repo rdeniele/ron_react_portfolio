@@ -51,7 +51,7 @@ function Projects() {
             <ProjectCard
             src={HTVRImage}
             link="https://hometeamvr.com"
-            h3="Home Team Luxury Realty"
+            h3="Home Team Vacation Rentals"
             p="Real Estate Website developed using Guesty"
             />
 
