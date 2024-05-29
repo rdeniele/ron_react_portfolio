@@ -19,6 +19,7 @@ function Projects() {
   return (
     <section id='projects' className={styles.container}>
         <h1 className="sectionTitle">Projects</h1>
+        <h2 className="sectionTitle">Client Work</h2>
         <div className={styles.projectsContainer}>
             <ProjectCard
             src={BeachwayImage}
@@ -55,6 +56,16 @@ function Projects() {
             />
 
             <ProjectCard
+            src={SunriseImage}
+            link="http://guesty.eu-responsivesiteeditor.com/preview/a29e8b4550dc406babc662d161e025aa"
+            h3="Sunrise Beach Vacation Rentals"
+            p="Sunrise Beach Vacation Rentals developed using Guesty"
+            />
+        </div>
+        <br/>
+        <h2 className="sectionTitle">Academic Projects</h2>
+        <div className={styles.projectsContainer}>
+            <ProjectCard
             src={KanokanoImage}
             link="https://github.com/rdeniele/coffee_shop2"
             h3="Kanokano Coffee Shop"
@@ -83,18 +94,12 @@ function Projects() {
             />
 
             <ProjectCard
-            src={SunriseImage}
-            link="http://guesty.eu-responsivesiteeditor.com/preview/a29e8b4550dc406babc662d161e025aa"
-            h3="Sunrise Beach Vacation Rentals"
-            p="Sunrise Beach Vacation Rentals developed using Guesty"
-            />
-            <ProjectCard
             src={RunThruImage}
             link="https://github.com/rdeniele/run_thru"
             h3="Run Thru"
             p="Run Thru a 2d game developed using C# Unity"
             />
-        </div>
+            </div>
     </section>
   )
 }

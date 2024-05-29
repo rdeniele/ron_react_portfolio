@@ -45,8 +45,8 @@ function Skills() {
       <div className={styles.skillList}>
         <SkillList src={checkMarkIcon} skill="WordPress" />
         <SkillList src={checkMarkIcon} skill="Guesty" />
-        <SkillList src={checkMarkIcon} skill="Photoshop" />
-        <SkillList src={checkMarkIcon} skill="Canva" />
+        <SkillList src={checkMarkIcon} skill="SquareSpace" />
+        <SkillList src={checkMarkIcon} skill="Wix" />
       </div>
       <hr />
       <div className={styles.skillList}>
@@ -63,6 +63,12 @@ function Skills() {
         <SkillList src={checkMarkIcon} skill="PostgresSQL" />
         <SkillList src={checkMarkIcon} skill="Jupyter" />
       </div>
+      <hr />
+      <div className={styles.skillList}>
+        <SkillList src={checkMarkIcon} skill="SAP Analytics Cloud" />
+        <SkillList src={checkMarkIcon} skill="SAP Build Apps." />
+      </div>
+      <hr />
     </section>
   );
 }
