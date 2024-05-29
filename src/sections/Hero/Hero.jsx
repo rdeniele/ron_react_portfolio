@@ -44,13 +44,13 @@ function Hero() {
         <br/>Game Developer, 
         <br/>and Data Scientist</h2>
         <span>
-          <a href="https://twitter.com/" target="_blank">
+          <a href="https://x.com/r_deniele" target="_blank">
             <img src={twitterIcon} alt="Twitter icon" />
           </a>
-          <a href="https://github.com/" target="_blank">
+          <a href="https://github.com/rdeniele?tab=repositories" target="_blank">
             <img src={githubIcon} alt="Github icon" />
           </a>
-          <a href="https://linkedin.com/" target="_blank">
+          <a href="https://www.linkedin.com/in/ron-deniele-paragoso-a96b1724b/" target="_blank">
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
         </span>
