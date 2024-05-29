@@ -10,6 +10,7 @@ import LBMSImage from '../../assets/LBMS.png';
 import MTSImage from '../../assets/MTS.png';
 import PBImage from '../../assets/PB.png';
 import SunriseImage from '../../assets/Sunrise.png';
+import RunThruImage from '../../assets/runthru.png';
 import ProjectCard from '../../common/ProjectCard';
 
 
@@ -83,9 +84,15 @@ function Projects() {
 
             <ProjectCard
             src={SunriseImage}
-            link="'http://guesty.eu-responsivesiteeditor.com/preview/a29e8b4550dc406babc662d161e025aa"
+            link="http://guesty.eu-responsivesiteeditor.com/preview/a29e8b4550dc406babc662d161e025aa"
             h3="Sunrise Beach Vacation Rentals"
             p="Sunrise Beach Vacation Rentals developed using Guesty"
+            />
+            <ProjectCard
+            src={RunThruImage}
+            link="https://github.com/rdeniele/run_thru"
+            h3="Run Thru"
+            p="Run Thru a 2d game developed using C# Unity"
             />
         </div>
     </section>
