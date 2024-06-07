@@ -38,14 +38,14 @@ function Projects() {
             src={HTCImage}
             link="https://home-team-capital.com"
             h3="Home Team Capital"
-            p="Real Estate Website developed using WordPress"
+            p="Real Estate Website developed using WordPress, HTML, and CSS"
             />
 
             <ProjectCard
             src={HTLRImage}
             link="https://hometeamluxuryrealty.com"
             h3="Home Team Luxury Realty"
-            p="Real Estate Website developed using WordPress"
+            p="Real Estate Website developed using WordPress, HTML, and CSS"
             />
 
             <ProjectCard
