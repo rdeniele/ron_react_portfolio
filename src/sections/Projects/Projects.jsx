@@ -11,6 +11,8 @@ import MTSImage from '../../assets/MTS.png';
 import PBImage from '../../assets/PB.png';
 import SunriseImage from '../../assets/Sunrise.png';
 import RunThruImage from '../../assets/runthru.png';
+import EmployImage from '../../assets/Employ.png';
+import BudYetImage from '../../assets/Employ.png';
 import ProjectCard from '../../common/ProjectCard';
 
 
@@ -98,6 +100,22 @@ function Projects() {
             link="https://github.com/rdeniele/run_thru"
             h3="Run Thru"
             p="Run Thru a 2d game developed using C# Unity"
+            />
+            </div>
+            <h2 className="sectionTitle">Internship Projects</h2>
+        <div className={styles.projectsContainer}>
+            <ProjectCard
+            src={EmployImage}
+            link="https://github.com/rdeniele/employment_management"
+            h3="Employment Management System"
+            p="Employment CRUD using Code Igniter"
+            />
+
+            <ProjectCard
+            src={EmployImage}
+            link="https://github.com/Lowkiiii/bud_yet/tree/master"
+            h3="Bud Yet"
+            p="Finance Tracking System with CRUD developed using Laravel, Tailwind, ShadCN, and Typescript"
             />
             </div>
     </section>
