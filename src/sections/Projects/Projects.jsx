@@ -13,7 +13,7 @@ import SunriseImage from '../../assets/Sunrise.png';
 import RunThruImage from '../../assets/runthru.png';
 import EmployImage from '../../assets/Employ.png';
 import BudYetImage from '../../assets/BudYetImage.png';
-import SignItOnImage from '../../assets/sign-it-on.png';
+import SignItOnImage from '../../assets/sign-it-on.jpg';
 import ProjectCard from '../../common/ProjectCard';
 
 
@@ -22,6 +22,8 @@ function Projects() {
   return (
     <section id='projects' className={styles.container}>
         <h1 className="sectionTitle">Projects</h1>
+        <br/>
+        <br/>
         <h2 className="sectionTitle">Back-End </h2>
         <div className={styles.projectsContainer}>
             <ProjectCard
@@ -75,7 +77,7 @@ function Projects() {
 
             </div>
         <br/>
-
+        <br/>
         <h2 className="sectionTitle"> Artificial Iintelligence / Machine Learning </h2>
         <div className={styles.projectsContainer}>
           
@@ -88,7 +90,7 @@ function Projects() {
 
         </div>
         <br/>
-
+        <br/>
         <h2 className="sectionTitle"> Game Development </h2>
         <div className={styles.projectsContainer}>
           
@@ -101,7 +103,7 @@ function Projects() {
 
         </div>
         <br/>
-
+        <br/>
         <h2 className="sectionTitle">Web Design </h2>
         <div className={styles.projectsContainer}>
             <ProjectCard

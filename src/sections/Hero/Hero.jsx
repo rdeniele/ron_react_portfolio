@@ -41,6 +41,7 @@ function Hero() {
           Paragoso
         </h1>
         <h2>Back-End Developer, 
+        <br/>Web designer,
         <br/>and AI Engineer</h2>
         <span>
           <a href="https://x.com/r_deniele" target="_blank">
@@ -54,7 +55,7 @@ function Hero() {
           </a>
         </span>
         <p className={styles.description}>
-          With passion for crafting responsive websites, and diving into data analysis and machine learning.
+          With passion for crafting responsive websites, and diving into artificial intelligence and machine learning.
         </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
