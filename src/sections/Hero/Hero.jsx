@@ -40,7 +40,7 @@ function Hero() {
           <br />
           Paragoso
         </h1>
-        <h2>Back-End Developer, 
+        <h2>Full-stack Developer, 
         <br/>Web designer,
         <br/>and AI Engineer</h2>
         <span>
@@ -55,7 +55,7 @@ function Hero() {
           </a>
         </span>
         <p className={styles.description}>
-          With passion for crafting responsive websites, and diving into artificial intelligence and machine learning.
+          With passion for crafting responsive websites as a Back-End inclined Full-stack Developer, and diving into artificial intelligence and machine learning.
         </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
