@@ -14,6 +14,7 @@ import RunThruImage from '../../assets/runthru.png';
 import EmployImage from '../../assets/Employ.png';
 import BudYetImage from '../../assets/BudYetImage.png';
 import SignItOnImage from '../../assets/sign-it-on.jpg';
+import Sign2Image from '../../assets/sign-it-on-2.jpg';
 import ProjectCard from '../../common/ProjectCard';
 
 
@@ -71,20 +72,20 @@ function Projects() {
             <ProjectCard
             src={SignItOnImage}
             link="https://github.com/rdeniele/ASL_TO_TEXT_WEB.git"
-            h3="Bud Yet"
+            h3="Sign it On"
             p="A ASL-to-Text-to-Speech Web App Machine Learning project developed using Django, Python, and Tensorflow"
             />
 
             </div>
         <br/>
         <br/>
-        <h2 className="sectionTitle"> Artificial Iintelligence / Machine Learning </h2>
+        <h2 className="sectionTitle"> Artificial Intelligence / Machine Learning </h2>
         <div className={styles.projectsContainer}>
           
           <ProjectCard
-            src={SignItOnImage}
+            src={Sign2Image}
             link="https://github.com/rdeniele/ASL_TO_TEXT_WEB.git"
-            h3="Bud Yet"
+            h3="Sign it On"
             p="A ASL-to-Text-to-Speech Web App Machine Learning project developed using Django, Python, and Tensorflow"
             />
 
