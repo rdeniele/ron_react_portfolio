@@ -40,9 +40,8 @@ function Hero() {
           <br />
           Paragoso
         </h1>
-        <h2>Web Developer, 
-        <br/>Game Developer, 
-        <br/>and Data Scientist</h2>
+        <h2>Back-End Developer, 
+        <br/>and AI Engineer</h2>
         <span>
           <a href="https://x.com/r_deniele" target="_blank">
             <img src={twitterIcon} alt="Twitter icon" />
@@ -55,7 +54,7 @@ function Hero() {
           </a>
         </span>
         <p className={styles.description}>
-          With passion for crafting responsive websites, coding and creating 3D & 2d assets for games, and diving into data analysis and machine learning in data science.
+          With passion for crafting responsive websites, and diving into data analysis and machine learning.
         </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
