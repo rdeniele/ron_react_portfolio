@@ -6,6 +6,9 @@
     --text-color: #222;
     --form-text-color: #555;
     --footer-text-color: #888;
+    --comic-border: 3px solid #000;
+    --comic-shadow: 5px 5px 0px #000;
+    --comic-bg-pattern: repeating-linear-gradient(45deg, #f0f0f0 0%, #f0f0f0 5%, #e0e0e0 5%, #e0e0e0 10%);
   }
   
   [data-theme='dark'] {
@@ -16,6 +19,9 @@
     --text-color: #fff;
     --form-text-color: #fff;
     --footer-text-color: #bbb;
+    --comic-border: 3px solid #fff;
+    --comic-shadow: 5px 5px 0px #444;
+    --comic-bg-pattern: repeating-linear-gradient(45deg, #333 0%, #333 5%, #222 5%, #222 10%);
   }
   
   body {
@@ -106,4 +112,21 @@
       }
     }
   }
+
+  .comic-text {
+    font-family: 'Comic Neue', cursive;
+  }
   
+  .comic-heading {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+  }
+  
+  .comic-box {
+    border: var(--comic-border);
+    box-shadow: var(--comic-shadow);
+    position: relative;
+    padding: 20px;
+    background-color: var(--background-color);
+    transform: rotate(-1deg);
+  }

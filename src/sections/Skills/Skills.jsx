@@ -15,23 +15,22 @@ function Skills() {
         <SkillList src={checkMarkIcon} skill="HTML" />
         <SkillList src={checkMarkIcon} skill="CSS" />
         <SkillList src={checkMarkIcon} skill="JavaScript" />
-        <SkillList src={checkMarkIcon} skill="TypeScript" />
         <SkillList src={checkMarkIcon} skill="Node" />
       </div>
       
-      <hr />
+      {/* <hr />
       <div className={styles.skillList}>
         <SkillList src={checkMarkIcon} skill="PostGresSQL" />
         <SkillList src={checkMarkIcon} skill="Express" />
         <SkillList src={checkMarkIcon} skill="React" />
         <SkillList src={checkMarkIcon} skill="Next" />
-      </div>
+      </div> */}
 
       <hr />
       <div className={styles.skillList}>
         <SkillList src={checkMarkIcon} skill="Laravel" />
         <SkillList src={checkMarkIcon} skill="Blade" />
-        <SkillList src={checkMarkIcon} skill="Tailwind" />
+        <SkillList src={checkMarkIcon} skill="Bootstrap" />
         <SkillList src={checkMarkIcon} skill="MySQL" />
         <SkillList src={checkMarkIcon} skill="XAMPP" />
       </div>
@@ -58,14 +57,14 @@ function Skills() {
         <SkillList src={checkMarkIcon} skill="Code Igniter" />
         <SkillList src={checkMarkIcon} skill="PHP" />
         <SkillList src={checkMarkIcon} skill="Figma" />
-        <SkillList src={checkMarkIcon} skill="Bootstrap" />
+        {/* <SkillList src={checkMarkIcon} skill="Bootstrap" /> */}
       </div>
       <hr />
 
       <div className={styles.skillList}>
         <SkillList src={checkMarkIcon} skill="WordPress" />
         <SkillList src={checkMarkIcon} skill="Guesty" />
-        <SkillList src={checkMarkIcon} skill="SquareSpace" />
+        <SkillList src={checkMarkIcon} skill="Webflow" />
         <SkillList src={checkMarkIcon} skill="Wix" />
       </div>
       <hr />
