@@ -45,7 +45,7 @@ function Hero() {
 
   return (
     <section id="hero" className={styles.container}>
-      <div className={styles.colorModeContainer}>
+    <div className={styles.profileContainer}>
         <div className={styles.comicImageFrame}>
           <img
             src={heroImg}
@@ -53,6 +53,8 @@ function Hero() {
             alt="Profile picture of Ron Paragoso"
           />
         </div>
+      </div>
+      <div className={styles.themeToggleContainer}>
         <img
           className={`${styles.colorMode} ${styles.wiggle}`}
           src={themeIcon}
@@ -60,6 +62,9 @@ function Hero() {
           onClick={toggleTheme}
         />
       </div>
+      
+      
+      
       <div className={`${styles.info} ${styles.infoBox}`}>
         <h1 className={styles.comicHeading}>
           Ron Deniele

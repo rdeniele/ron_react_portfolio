@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import styles from './ProjectsStyles.module.css';
 import ProjectCard from '../../common/ProjectCard';
+import useSwipe from '../../common/useSwipe';
 
 // Images
 import BeachwayImage from '../../assets/Beachway.png';
@@ -35,6 +36,13 @@ function Projects() {
   const gamedevTrackRef = useRef(null);
   const webdesignTrackRef = useRef(null);
 
+  useSwipe(backEndTrackRef, () => navigate(1, 'backEnd'), () => navigate(-1, 'backEnd'));
+  useSwipe(aiTrackRef, () => navigate(1, 'ai'), () => navigate(-1, 'ai'));
+  useSwipe(gamedevTrackRef, () => navigate(1, 'gamedev'), () => navigate(-1, 'gamedev'));
+  useSwipe(webdesignTrackRef, () => navigate(1, 'webdesign'), () => navigate(-1, 'webdesign'));
+
+  const isMobile = () => window.innerWidth < 768;
+
   const navigate = (direction, section) => {
     const trackRef = {
       backEnd: backEndTrackRef,
@@ -44,26 +52,31 @@ function Projects() {
     }[section];
 
     const totalItems = trackRef.current.children.length;
-    const containerWidth = trackRef.current.parentElement.offsetWidth;
-    const itemWidth = 330;
-    const visibleItems = Math.floor(containerWidth / itemWidth);
-    const maxIndex = Math.max(0, totalItems - visibleItems);
+    
+    if (isMobile()) {
+      // On mobile, move one item at a time
+      setCurrentIndex(prev => {
+        const newIndex = prev[section] + direction;
+        return {
+          ...prev,
+          [section]: Math.max(0, Math.min(newIndex, totalItems - 1))
+        };
+      });
+    } else {
+      // Desktop behavior - original code
+      const containerWidth = trackRef.current.parentElement.offsetWidth;
+      const itemWidth = 330;
+      const visibleItems = Math.floor(containerWidth / itemWidth);
+      const maxIndex = Math.max(0, totalItems - visibleItems);
 
-    setCurrentIndex(prev => {
-      const newIndex = prev[section] + direction;
-      return {
-        ...prev,
-        [section]: Math.max(0, Math.min(newIndex, maxIndex))
-      };
-    });
-  };
-
-  const createCarouselItems = (items) => {
-    return items.map((item, index) => (
-      <div key={index} className={styles.carouselItem}>
-        <ProjectCard {...item} />
-      </div>
-    ));
+      setCurrentIndex(prev => {
+        const newIndex = prev[section] + direction;
+        return {
+          ...prev,
+          [section]: Math.max(0, Math.min(newIndex, maxIndex))
+        };
+      });
+    }
   };
 
   const backEndProjects = [
@@ -98,26 +111,47 @@ function Projects() {
 
   const renderCarousel = (title, section, data, ref) => (
     <>
-      <h2 className="sectionTitle">{title}</h2>
+      <h2 className={`sectionTitle ${styles.categoryHeading}`}>{title}</h2>
+      <div className={styles.projectCount}>{data.length} projects</div>
+      {isMobile() && <div className={styles.swipeHint}>Swipe left or right to navigate</div>}
       <div className={styles.projectsContainer}>
         <button
           className={`${styles.carouselNav} ${styles.prevButton}`}
           onClick={() => navigate(-1, section)}
           aria-label="Previous projects"
+          disabled={currentIndex[section] === 0}
         >
           &lt;
         </button>
         <div
           className={styles.carouselTrack}
           ref={ref}
-          style={{ transform: `translateX(-${currentIndex[section] * 330}px)` }}
+          style={{ 
+            transform: `translateX(-${currentIndex[section] * (isMobile() ? 100 : 330)}%)` 
+          }}
         >
-          {createCarouselItems(data)}
+          {data.map((item, index) => (
+            <div 
+              key={index} 
+              className={styles.carouselItem}
+              style={{ 
+                animationDelay: `${index * 0.1}s`,
+                animationName: 'fadeInUp',
+                animationDuration: '0.5s',
+                animationFillMode: 'both' 
+              }}
+            >
+              <div className={styles.projectCard}>
+                <ProjectCard {...item} />
+              </div>
+            </div>
+          ))}
         </div>
         <button
           className={`${styles.carouselNav} ${styles.nextButton}`}
           onClick={() => navigate(1, section)}
           aria-label="Next projects"
+          disabled={isMobile() ? currentIndex[section] === data.length - 1 : false}
         >
           &gt;
         </button>

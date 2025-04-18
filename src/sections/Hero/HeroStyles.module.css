@@ -1,116 +1,137 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  height: 100dvh;
+  min-height: 500px;
+  
+  .hero {
+    max-width: 200px;
+    border-radius: 100%;
+  }
+  
+  span {
     display: flex;
-    flex-direction: column;
+    gap: 25px;
     justify-content: center;
-    gap: 20px;
-    text-align: center;
-    height: 100dvh;
-    min-height: 500px;
-  
-    .hero {
-      max-width: 200px;
-      border-radius: 100%;
-    }
-  
-    span {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-  
-      a {
-        margin: 0;
-  
-        img {
-          width: 30px;
-        }
-      }
-    }
   
     a {
-      width: fit-content;
-      align-self: center;
-    }
+      margin: 0;
   
-    button {
-      background-color: var(--btn-color);
-      color: var(--btn-text-color);
-      border: none;
-      border-radius: 20px;
-      width: 126px;
-      height: 50px;
-      font-size: 20px;
-      font-weight: bold;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-      transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
-    }
-  
-    button:hover {
-      transform: scale(1.05);
-    }
-  
-    button:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+      img {
+        width: 30px;
+      }
     }
   }
   
-  .colorModeContainer {
-    position: relative;
+  a {
+    width: fit-content;
+    align-self: center;
   }
   
-  .colorMode {
+  button {
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    border: none;
+    border-radius: 20px;
+    width: 126px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* New theme toggle container */
+.themeToggleContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.colorMode {
+  width: 25px;
+  /* No absolute positioning */
+}
+
+.colorMode:hover {
+  cursor: pointer;
+}
+
+/* Profile container */
+.profileContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.description {
+  max-width: 450px; /* Increased from 24ch */
+  align-self: center;
+  line-height: 1.5;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (width >= 800px) {
+  .container {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  
+    .hero {
+      max-width: 350px;
+      width: 350px;
+    }
+  }
+  
+  /* Reposition elements for desktop */
+  .themeToggleContainer {
     position: absolute;
-    right: 0;
-    width: 25px;
+    top: 20px;
+    right: 20px;
+    width: auto;
   }
   
-  .colorMode:hover {
-    cursor: pointer;
+  .profileContainer {
+    width: auto;
   }
   
   .description {
-    max-width: 450px; /* Increased from 24ch */
-    align-self: center;
-    line-height: 1.5;
+    max-width: 350px;
   }
-  
-  
-  .info {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-@media (width >= 800px) {
-    .container {
-      flex-direction: row-reverse;
-      align-items: center;
-      justify-content: space-evenly;
-  
-      .hero {
-        max-width: 350px;
-        width: 350px;
-      }
-    }
-    
-    .description {
-      max-width: 350px;
+}
+
+@media (width >= 1400px) {
+  .container {
+    .hero {
+      max-width: 400px;
+      width: 400px;
     }
   }
   
-  @media (width >= 1400px) {
-    .container {
-      .hero {
-        max-width: 400px;
-        width: 400px;
-        
-      }
-    }
-    
-    .description {
-      max-width: 500px;
-    }
+  .description {
+    max-width: 500px;
   }
+}
 
 /* Add to your HeroStyles.module.css */
 .comicContainer {
@@ -239,4 +260,14 @@
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+}
+
+@media (min-width: 800px) {
+  .colorModeContainer {
+    width: auto; /* Natural width on desktop */
+  }
+  
+  .colorMode {
+    right: 0; /* Return to original positioning on desktop */
+  }
 }
