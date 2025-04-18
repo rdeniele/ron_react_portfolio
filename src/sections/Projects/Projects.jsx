@@ -1,7 +1,6 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import styles from './ProjectsStyles.module.css';
 import ProjectCard from '../../common/ProjectCard';
-import useSwipe from '../../common/useSwipe';
 
 // Images
 import BeachwayImage from '../../assets/Beachway.png';
@@ -24,59 +23,27 @@ import BoxMatch from '../../assets/predict_box_match_logistic_reg.png';
 import CpuTemp from '../../assets/predict_cpu_temp_linear_reg.png';
 
 function Projects() {
-  const [currentIndex, setCurrentIndex] = useState({
+  const [currentSlide, setCurrentSlide] = useState({
     backEnd: 0,
     ai: 0,
     gamedev: 0,
     webdesign: 0
   });
 
-  const backEndTrackRef = useRef(null);
-  const aiTrackRef = useRef(null);
-  const gamedevTrackRef = useRef(null);
-  const webdesignTrackRef = useRef(null);
-
-  useSwipe(backEndTrackRef, () => navigate(1, 'backEnd'), () => navigate(-1, 'backEnd'));
-  useSwipe(aiTrackRef, () => navigate(1, 'ai'), () => navigate(-1, 'ai'));
-  useSwipe(gamedevTrackRef, () => navigate(1, 'gamedev'), () => navigate(-1, 'gamedev'));
-  useSwipe(webdesignTrackRef, () => navigate(1, 'webdesign'), () => navigate(-1, 'webdesign'));
-
-  const isMobile = () => window.innerWidth < 768;
-
-  const navigate = (direction, section) => {
-    const trackRef = {
-      backEnd: backEndTrackRef,
-      ai: aiTrackRef,
-      gamedev: gamedevTrackRef,
-      webdesign: webdesignTrackRef
-    }[section];
-
-    const totalItems = trackRef.current.children.length;
-    
-    if (isMobile()) {
-      // On mobile, move one item at a time
-      setCurrentIndex(prev => {
-        const newIndex = prev[section] + direction;
-        return {
-          ...prev,
-          [section]: Math.max(0, Math.min(newIndex, totalItems - 1))
-        };
-      });
-    } else {
-      // Desktop behavior - original code
-      const containerWidth = trackRef.current.parentElement.offsetWidth;
-      const itemWidth = 330;
-      const visibleItems = Math.floor(containerWidth / itemWidth);
-      const maxIndex = Math.max(0, totalItems - visibleItems);
-
-      setCurrentIndex(prev => {
-        const newIndex = prev[section] + direction;
-        return {
-          ...prev,
-          [section]: Math.max(0, Math.min(newIndex, maxIndex))
-        };
-      });
-    }
+  // Check if mobile view
+  const isMobile = window.innerWidth < 768;
+  
+  // Simplified navigation function
+  const navigate = (direction, section, totalItems) => {
+    setCurrentSlide(prev => {
+      let newIndex = prev[section] + direction;
+      
+      // Simple wrapping logic
+      if (newIndex < 0) newIndex = totalItems - 1;
+      if (newIndex >= totalItems) newIndex = 0;
+      
+      return { ...prev, [section]: newIndex };
+    });
   };
 
   const backEndProjects = [
@@ -109,49 +76,43 @@ function Projects() {
     { src: SunriseImage, link: "http://guesty.eu-responsivesiteeditor.com/preview/a29e8b4550dc406babc662d161e025aa", h3: "Sunrise Beach Rentals", p: "Vacation Rentals via Guesty" },
   ];
 
-  const renderCarousel = (title, section, data, ref) => (
+  // Simplified carousel renderer
+  const renderCarousel = (title, section, projects) => (
     <>
       <h2 className={`sectionTitle ${styles.categoryHeading}`}>{title}</h2>
-      <div className={styles.projectCount}>{data.length} projects</div>
-      {isMobile() && <div className={styles.swipeHint}>Swipe left or right to navigate</div>}
+      <div className={styles.projectCount}>{projects.length} projects</div>
+      {isMobile && <div className={styles.swipeHint}>Swipe or tap arrows to navigate</div>}
+      
       <div className={styles.projectsContainer}>
         <button
           className={`${styles.carouselNav} ${styles.prevButton}`}
-          onClick={() => navigate(-1, section)}
+          onClick={() => navigate(-1, section, projects.length)}
           aria-label="Previous projects"
-          disabled={currentIndex[section] === 0}
         >
           &lt;
         </button>
-        <div
-          className={styles.carouselTrack}
-          ref={ref}
-          style={{ 
-            transform: `translateX(-${currentIndex[section] * (isMobile() ? 100 : 330)}%)` 
-          }}
-        >
-          {data.map((item, index) => (
-            <div 
-              key={index} 
-              className={styles.carouselItem}
-              style={{ 
-                animationDelay: `${index * 0.1}s`,
-                animationName: 'fadeInUp',
-                animationDuration: '0.5s',
-                animationFillMode: 'both' 
-              }}
-            >
-              <div className={styles.projectCard}>
-                <ProjectCard {...item} />
+        
+        <div className={styles.carouselViewport}>
+          <div 
+            className={styles.carouselTrack}
+            style={{ 
+              transform: `translateX(-${currentSlide[section] * (isMobile ? 100 : 330)}px)` 
+            }}
+          >
+            {projects.map((item, index) => (
+              <div key={index} className={styles.carouselItem}>
+                <div className={styles.projectCard}>
+                  <ProjectCard {...item} />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        
         <button
           className={`${styles.carouselNav} ${styles.nextButton}`}
-          onClick={() => navigate(1, section)}
+          onClick={() => navigate(1, section, projects.length)}
           aria-label="Next projects"
-          disabled={isMobile() ? currentIndex[section] === data.length - 1 : false}
         >
           &gt;
         </button>
@@ -164,10 +125,10 @@ function Projects() {
     <section id="projects" className={styles.container}>
       <h1 className="sectionTitle">Projects</h1>
       <br /><br />
-      {renderCarousel("Back-End", "backEnd", backEndProjects, backEndTrackRef)}
-      {renderCarousel("Artificial Intelligence / Machine Learning / Data Sci", "ai", aiProjects, aiTrackRef)}
-      {renderCarousel("Game Development", "gamedev", gamedevProjects, gamedevTrackRef)}
-      {renderCarousel("Web Design", "webdesign", webdesignProjects, webdesignTrackRef)}
+      {renderCarousel("Back-End", "backEnd", backEndProjects)}
+      {renderCarousel("Artificial Intelligence / Machine Learning / Data Sci", "ai", aiProjects)}
+      {renderCarousel("Game Development", "gamedev", gamedevProjects)}
+      {renderCarousel("Web Design", "webdesign", webdesignProjects)}
     </section>
   );
 }

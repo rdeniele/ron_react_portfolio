@@ -208,3 +208,8 @@
     margin-bottom: 10px;
   }
 }
+
+.carouselViewport {
+  overflow: hidden;
+  width: 100%;
+}
