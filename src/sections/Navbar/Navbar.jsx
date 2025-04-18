@@ -52,7 +52,7 @@ function Navbar() {
   return (
     <nav className={`${styles.navbar} ${styles[theme]} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.logo}>
-        <a href="#hero">Ron P</a>
+        <a href="#hero">RP</a>
       </div>
       
       <div className={styles.menuIcon} onClick={toggleMenu}>
