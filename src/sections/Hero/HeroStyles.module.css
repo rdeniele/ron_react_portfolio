@@ -106,9 +106,10 @@
   /* Reposition elements for desktop */
   .themeToggleContainer {
     position: absolute;
-    top: 20px;
+    top: 80px; /* Increase this value to move it below the navbar */
     right: 20px;
     width: auto;
+    z-index: 900; /* Add z-index to ensure it's visible */
   }
   
   .profileContainer {
@@ -153,6 +154,8 @@
   font-family: 'Comic Neue', cursive;
   font-weight: 700;
   line-height: 1.4;
+  white-space: pre-line;
+
 }
 
 .animatedText {

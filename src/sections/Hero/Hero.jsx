@@ -16,7 +16,9 @@ function Hero() {
   const { theme, toggleTheme } = useTheme();
   const [text, setText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "Full-stack Developer, Web designer, and AI Engineer";
+  const fullText = `Full-stack Developer,
+Web designer,
+and AI Engineer`;
   const [charIndex, setCharIndex] = useState(0);
 
   // Text typing animation effect
