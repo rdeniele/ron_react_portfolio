@@ -21,6 +21,7 @@ import Sign2Image from '../../assets/sign-it-on-2.jpg';
 import BattLife from '../../assets/predict_batt_life_linear_reg.png';
 import BoxMatch from '../../assets/predict_box_match_logistic_reg.png';
 import CpuTemp from '../../assets/predict_cpu_temp_linear_reg.png';
+import Thoughts from '../../assets/THOUGHTS.png';
 
 function Projects() {
   const [currentSlide, setCurrentSlide] = useState({
@@ -76,6 +77,12 @@ function Projects() {
     { src: SunriseImage, link: "http://guesty.eu-responsivesiteeditor.com/preview/a29e8b4550dc406babc662d161e025aa", h3: "Sunrise Beach Rentals", p: "Vacation Rentals via Guesty" },
   ];
 
+  const mobdevProjects = [
+    { src: Thoughts, link: "https://github.com/rdeniele/thoughts.git", h3: "Thoughts", p: "A bit-sized review platform made with Flutter using the MVVM architecture." },
+    
+  ];
+
+
   // Simplified carousel renderer
   const renderCarousel = (title, section, projects) => (
     <>
@@ -127,6 +134,7 @@ function Projects() {
       <br /><br />
       {renderCarousel("Back-End", "backEnd", backEndProjects)}
       {renderCarousel("Artificial Intelligence / Machine Learning / Data Sci", "ai", aiProjects)}
+      {renderCarousel("Mobile Development", mobdevProjects)}
       {renderCarousel("Game Development", "gamedev", gamedevProjects)}
       {renderCarousel("Web Design", "webdesign", webdesignProjects)}
     </section>
