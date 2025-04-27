@@ -6,6 +6,7 @@ import Footer from './sections/Footer/Footer';
 import Hero from './sections/Hero/Hero';
 import Projects from './sections/Projects/Projects';
 import Skills from './sections/Skills/Skills';
+import Certificates from './sections/Certificates/Certificates';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Hero />
       <Projects />
+      <Certificates />
       <Skills />
       <Contact />
       <Footer />

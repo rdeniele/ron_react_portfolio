@@ -1,0 +1,336 @@
+/* Certificates Section Styles */
+.certificatesSection {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container img {
+    width: 300px;
+    height: 180px;
+    align-self: center;
+    background-color: var(--project-card-bg);
+    border-radius: 20px;
+    object-fit: cover; 
+    object-position: center;
+}
+
+.container a {
+    width: fit-content;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 200ms ease-in-out;
+}
+
+.container a:hover {
+    transform: scale(1.05);
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.certificates-count {
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.swipe-hint {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.gallery-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.nav-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.prev-button {
+    margin-right: 15px;
+}
+
+.next-button {
+    margin-left: 15px;
+}
+
+.carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 300px;
+    padding: 0 15px;
+}
+
+.galleryWrapper {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0 40px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.carouselTrack {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 30px;
+    padding: 10px 0;
+}
+
+.carouselItem {
+    flex: 0 0 auto;
+    width: 300px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+.carouselItem:hover {
+    transform: translateY(-5px);
+    opacity: 1;
+}
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 10;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navButton:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.prevButton {
+    left: 0;
+}
+
+.nextButton {
+    right: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (width >= 800px) {
+    .galleryWrapper {
+        max-width: 950px;
+        padding: 0 50px;
+    }
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sectionHeader h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+    transform: rotate(-1deg);
+    padding: 5px 15px;
+}
+
+.sectionHeader h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    transform: rotate(1deg);
+}
+
+.sectionHeader p {
+    color: var(--footer-text-color);
+}
+
+/* Certificate count display */
+.certificatesCount {
+    font-size: 0.8rem;
+    color: var(--footer-text-color);
+    margin-bottom: 15px;
+}
+
+/* Card styling improvements */
+.certificateCard {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--background-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: var(--comic-border);
+    transform: rotate(-1deg);
+}
+
+.certificateCard:hover {
+    transform: rotate(0) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    /* Container adjustments for mobile */
+    .galleryWrapper {
+        padding: 0 20px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    /* Make card take full width */
+    .carouselItem {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /* Cards should be centered */
+    .carouselTrack {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    /* Ensure the image scales properly */
+    .container img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+    
+    /* Make navigation buttons smaller and more visible */
+    .navButton {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    /* Add swipe hint indicator */
+    .swipeHint {
+        display: block;
+        font-size: 12px;
+        color: var(--footer-text-color);
+        margin-bottom: 10px;
+        animation: fadeInOut 2s infinite;
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+    }
+}
+
+.carouselViewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .certificates-section {
+        padding: 60px 0;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .carousel-item {
+        min-width: 100%;
+        padding: 0;
+    }
+    
+    .nav-button {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+    
+    .gallery-wrapper {
+        padding: 0 10px;
+    }
+}
