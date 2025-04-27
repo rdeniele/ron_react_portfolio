@@ -137,7 +137,6 @@ function Projects() {
       {renderCarousel("Mobile Development", "mobdev", mobdevProjects)}
       {renderCarousel("Game Development", "gamedev", gamedevProjects)}
       {renderCarousel("Web Design", "webdesign", webdesignProjects)}
-      {renderCarousel("Web Design", "webdesign", webdesignProjects)}
     </section>
   );
 }
