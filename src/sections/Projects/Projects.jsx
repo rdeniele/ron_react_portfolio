@@ -28,7 +28,8 @@ function Projects() {
     backEnd: 0,
     ai: 0,
     gamedev: 0,
-    webdesign: 0
+    webdesign: 0,
+    mobdev: 0
   });
 
   // Check if mobile view
@@ -131,11 +132,11 @@ function Projects() {
   return (
     <section id="projects" className={styles.container}>
       <h1 className="sectionTitle">Projects</h1>
-      <br /><br />
       {renderCarousel("Back-End", "backEnd", backEndProjects)}
       {renderCarousel("Artificial Intelligence / Machine Learning / Data Sci", "ai", aiProjects)}
-      {renderCarousel("Mobile Development", mobdevProjects)}
+      {renderCarousel("Mobile Development", "mobdev", mobdevProjects)}
       {renderCarousel("Game Development", "gamedev", gamedevProjects)}
+      {renderCarousel("Web Design", "webdesign", webdesignProjects)}
       {renderCarousel("Web Design", "webdesign", webdesignProjects)}
     </section>
   );
