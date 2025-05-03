@@ -22,6 +22,8 @@ import BattLife from '../../assets/predict_batt_life_linear_reg.png';
 import BoxMatch from '../../assets/predict_box_match_logistic_reg.png';
 import CpuTemp from '../../assets/predict_cpu_temp_linear_reg.png';
 import Thoughts from '../../assets/THOUGHTS.png';
+import mmaMatch from '../../predict_mma_match_decision_tree.png';
+import parrot from '../../assets/predict_parrot_species_SVC.png';
 
 function Projects() {
   const [currentSlide, setCurrentSlide] = useState({
@@ -60,9 +62,11 @@ function Projects() {
 
   const aiProjects = [
     { src: Sign2Image, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "Sign it On", p: "ASL-to-Text-to-Speech Web App using Django & TensorFlow" },
-    { src: BattLife, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "Battery Life Prediction", p: "Predict battery life using Linear Regression" },
-    { src: BoxMatch, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "Boxing Match Prediction", p: "Predict boxing winners using Logistic Regression" },
-    { src: CpuTemp, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "CPU Temp Prediction", p: "Predict laptop CPU temp using Linear Regression" },
+    { src: BattLife, link: "", h3: "Battery Life Prediction", p: "Predict battery life using Linear Regression" },
+    { src: BoxMatch, link: "", h3: "Boxing Match Prediction", p: "Predict boxing winners using Logistic Regression" },
+    { src: CpuTemp, link: "", h3: "CPU Temp Prediction", p: "Predict laptop CPU temp using Linear Regression" },
+    { src: mmaMatch, link: "", h3: "CPU Temp Prediction", p: "Predict laptop CPU temp using Decision Tree" },
+    { src: parrot, link: "", h3: "CPU Temp Prediction", p: "Predict laptop CPU temp using SVC" },
   ];
 
   const gamedevProjects = [
