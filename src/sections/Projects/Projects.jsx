@@ -22,7 +22,7 @@ import BattLife from '../../assets/predict_batt_life_linear_reg.png';
 import BoxMatch from '../../assets/predict_box_match_logistic_reg.png';
 import CpuTemp from '../../assets/predict_cpu_temp_linear_reg.png';
 import Thoughts from '../../assets/THOUGHTS.png';
-import mmaMatch from '../../predict_mma_match_decision_tree.png';
+import mmaMatch from '../../assets/predict_mma_match_decision_tree.png';
 import parrot from '../../assets/predict_parrot_species_SVC.png';
 
 function Projects() {
