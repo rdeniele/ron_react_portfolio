@@ -100,6 +100,7 @@
     .hero {
       max-width: 350px;
       width: 350px;
+      padding-top: 40px;
     }
   }
   

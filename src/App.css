@@ -9,9 +9,14 @@
     --comic-border: 3px solid #000;
     --comic-shadow: 5px 5px 0px #000;
     --comic-bg-pattern: repeating-linear-gradient(45deg, #f0f0f0 0%, #f0f0f0 5%, #e0e0e0 5%, #e0e0e0 10%);
-  }
-  
-  [data-theme='dark'] {
+    --max-width: 1400px;
+    --container-padding: 15px;
+    --comic-box-padding: 12px;
+    --root-gap: 40px;
+    --section-margin: 20px;
+}
+
+[data-theme='dark'] {
     --background-color: #222;
     --btn-color: #fff;
     --btn-text-color: #222;
@@ -22,111 +27,200 @@
     --comic-border: 3px solid #fff;
     --comic-shadow: 5px 5px 0px #444;
     --comic-bg-pattern: repeating-linear-gradient(45deg, #333 0%, #333 5%, #222 5%, #222 10%);
-  }
-  
-  body {
+}
+
+/* Base styles (mobile first) */
+body {
     background-color: var(--background-color);
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 60px;
-  }
-  
-  #root {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#root {
     display: flex;
     flex-direction: column;
-    gap: 60px;
-  }
-  
-  h1,
-  h2,
-  h3,
-  p {
+    gap: var(--root-gap);
+    margin: 0 auto;
+    max-width: var(--max-width);
+    padding: 0 var(--container-padding);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, p {
     color: var(--text-color);
     margin: 0;
     padding: 0;
-  }
-  
-  h2,
-  h3,
-  p {
+}
+
+h2, h3, p {
     font-family: 'Roboto Mono', monospace;
-  }
-  
-  h1,
-  h2 {
+}
+
+h1, h2 {
     text-transform: uppercase;
-  }
-  
-  h2,
-  h3 {
-    font-size: 20px;
-  }
-  
-  h1 {
+}
+
+h2, h3 {
+    font-size: 18px;
+}
+
+h1 {
     font-family: 'Rubik', sans-serif;
-    font-size: 32px;
-  }
-  
-  p {
+    font-size: 28px;
+}
+
+p {
     font-size: 16px;
     font-weight: 300;
-  }
-  
-  .sectionTitle {
-    margin-bottom: 30px;
-  }
-  
-  .hover {
-    cursor: pointer;
-  }
-  
-  @media (width >= 800px) {
-    #root {
-      gap: 100px;
-    }
-    h1 {
-      font-size: 40px;
-    }
-    h2,
-    h3 {
-      font-size: 24px;
-    }
-    p {
-      font-size: 20px;
-    }
-  
-    .sectionTitle {
-      margin-bottom: 60px;
-    }
-  
-    @media (width >= 1400px) {
-      #root {
-        gap: 200px;
-      }
-      h1 {
-        font-size: 48px;
-      }
-  
-      .sectionTitle {
-        margin-bottom: 75px;
-      }
-    }
-  }
+    line-height: 1.5;
+}
 
-  .comic-text {
+.sectionTitle {
+    margin-bottom: var(--section-margin);
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.comic-text {
     font-family: 'Comic Neue', cursive;
-  }
-  
-  .comic-heading {
+}
+
+.comic-heading {
     font-family: 'Bangers', cursive;
     letter-spacing: 2px;
-  }
-  
-  .comic-box {
+}
+
+.comic-box {
     border: var(--comic-border);
     box-shadow: var(--comic-shadow);
     position: relative;
-    padding: 20px;
+    padding: var(--comic-box-padding);
     background-color: var(--background-color);
     transform: rotate(-1deg);
-  }
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    margin: 0 calc(-1 * var(--container-padding));
+    width: calc(100% + (2 * var(--container-padding)));
+}
+
+.comic-box:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+/* Small tablets and large phones (landscape) */
+@media screen and (min-width: 576px) {
+    :root {
+        --container-padding: 20px;
+        --comic-box-padding: 15px;
+        --root-gap: 50px;
+        --section-margin: 25px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2, h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+}
+
+/* Tablets and small desktops */
+@media screen and (min-width: 768px) {
+    :root {
+        --container-padding: 25px;
+        --comic-box-padding: 20px;
+        --root-gap: 80px;
+        --section-margin: 45px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2, h3 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .comic-box {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+/* Desktops */
+@media screen and (min-width: 1024px) {
+    :root {
+        --container-padding: 30px;
+        --comic-box-padding: 25px;
+        --root-gap: 100px;
+        --section-margin: 60px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2, h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+/* Large desktops */
+@media screen and (min-width: 1400px) {
+    :root {
+        --container-padding: 40px;
+        --comic-box-padding: 30px;
+        --root-gap: 200px;
+        --section-margin: 75px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+}
+
+/* Print styles */
+@media print {
+    :root {
+        --container-padding: 0;
+        --comic-box-padding: 15px;
+        --root-gap: 40px;
+        --section-margin: 20px;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    #root {
+        max-width: none;
+    }
+
+    .comic-box {
+        box-shadow: none;
+        border: 1px solid #000;
+        transform: none;
+        margin: 0;
+        width: 100%;
+    }
+}
