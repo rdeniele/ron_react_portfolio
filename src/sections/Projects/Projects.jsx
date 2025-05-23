@@ -24,6 +24,7 @@ import CpuTemp from '../../assets/predict_cpu_temp_linear_reg.png';
 import Thoughts from '../../assets/THOUGHTS.png';
 import mmaMatch from '../../assets/predict_mma_match_decision_tree.png';
 import parrot from '../../assets/predict_parrot_species_SVC.png';
+import bookTrack2 from '../../assets/FlutterBookTrack2.png';
 
 function Projects() {
   const [currentSlide, setCurrentSlide] = useState({
@@ -84,6 +85,7 @@ function Projects() {
 
   const mobdevProjects = [
     { src: Thoughts, link: "https://github.com/rdeniele/thoughts.git", h3: "Thoughts", p: "A bit-sized review platform made with Flutter using the MVVM architecture." },
+    { src: bookTrack2, link: "https://github.com/CjohnA/booktrack2_2.git", h3: "BookTrack2", p: "A library management system tailored for librarians and students to help them track the books made with Flutter using the MVVM architecture." },
     
   ];
 
