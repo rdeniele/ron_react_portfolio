@@ -26,6 +26,7 @@ import mmaMatch from '../../assets/predict_mma_match_decision_tree.png';
 import parrot from '../../assets/predict_parrot_species_SVC.png';
 import bookTrack2 from '../../assets/FlutterBookTrack2.png';
 import unloadly from '../../assets/Unloadly.png';
+import jobAppTrack from '../../assets/JobApplicationsTracker.png';
 
 function Projects() {
   const [currentSlide, setCurrentSlide] = useState({
@@ -53,6 +54,7 @@ function Projects() {
   };
 
   const backEndProjects = [
+    { src: jobAppTrack, link: "https://github.com/rdeniele/JobApplicationTracker.git", h3: "Job Applications Tracker", p: "Job Applications Tracker CRUD using C#, ASP.Net framework with PostGresSQL " },
     { src: KanokanoImage, link: "https://github.com/rdeniele/coffee_shop2", h3: "Kanokano Coffee Shop", p: "Coffee CRUD and POS system developed using Laravel" },
     { src: LBMSImage, link: "https://github.com/rdeniele/coffee_shop2", h3: "Library Management System", p: "Library Management System with CRUD developed using native PHP" },
     { src: MTSImage, link: "https://github.com/rdeniele/money_transfer", h3: "Money Transfer System", p: "Money Transfer System with CRUD developed using Laravel" },
