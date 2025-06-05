@@ -27,6 +27,7 @@ import parrot from '../../assets/predict_parrot_species_SVC.png';
 import bookTrack2 from '../../assets/FlutterBookTrack2.png';
 import unloadly from '../../assets/Unloadly.png';
 import jobAppTrack from '../../assets/JobApplicationsTracker.png';
+import noteJewel from '../../assets/noteJewel_AI.png';
 
 function Projects() {
   const [currentSlide, setCurrentSlide] = useState({
@@ -62,6 +63,7 @@ function Projects() {
     { src: BudYetImage, link: "https://github.com/Lowkiiii/bud_yet/tree/master", h3: "Bud Yet", p: "Finance Tracking System with CRUD developed using Laravel, Tailwind, ShadCN, and Typescript" },
     { src: EmployImage, link: "https://github.com/rdeniele/employment_management", h3: "Employment Management System", p: "Employment CRUD using Code Igniter" },
     { src: SignItOnImage, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "Sign it On", p: "ASL-to-Text-to-Speech Web App using Django & TensorFlow" },
+    { src: noteJewel, link: "https://notejewel.vercel.app/", h3: "Note Jewel", p: "an AI assisted noet taking app." },
   ];
 
   const aiProjects = [
@@ -71,6 +73,8 @@ function Projects() {
     { src: CpuTemp, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "CPU Temp Prediction", p: "Predict laptop CPU temp using Linear Regression" },
     { src: mmaMatch, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "MMA Match Prediction", p: "Predict MMA Match using Decision Tree" },
     { src: parrot, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "Parrot Species Prediction", p: "Predict Parrot Species using SVC" },
+    { src: noteJewel, link: "https://notejewel.vercel.app/", h3: "Note Jewel", p: "an AI assisted noet taking app." },
+
   ];
 
   const gamedevProjects = [
