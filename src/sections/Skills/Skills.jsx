@@ -15,7 +15,7 @@ function Skills() {
         <SkillList src={checkMarkIcon} skill="HTML" />
         <SkillList src={checkMarkIcon} skill="CSS" />
         <SkillList src={checkMarkIcon} skill="JavaScript" />
-        <SkillList src={checkMarkIcon} skill="Node" />
+        {/* <SkillList src={checkMarkIcon} skill="Node" /> */}
       </div>
       
       {/* <hr />
@@ -38,10 +38,10 @@ function Skills() {
       <hr />
       <div className={styles.skillList}>
         <SkillList src={checkMarkIcon} skill="C#" />
-        <SkillList src={checkMarkIcon} skill="C++" />
-        <SkillList src={checkMarkIcon} skill="Java" />
+        <SkillList src={checkMarkIcon} skill="ASP.NET" />
+        {/* <SkillList src={checkMarkIcon} skill="Java" />
         <SkillList src={checkMarkIcon} skill="Unity" />
-        <SkillList src={checkMarkIcon} skill="Blender" />
+        <SkillList src={checkMarkIcon} skill="Blender" /> */}
       </div>
 
       <hr />
@@ -49,7 +49,7 @@ function Skills() {
         <SkillList src={checkMarkIcon} skill="Python" />
         <SkillList src={checkMarkIcon} skill="Tensorflow" />
         <SkillList src={checkMarkIcon} skill="Django" />
-        <SkillList src={checkMarkIcon} skill="MongoDB" />
+        {/* <SkillList src={checkMarkIcon} skill="MongoDB" /> */}
       </div>
 
       <hr />

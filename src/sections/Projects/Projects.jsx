@@ -28,6 +28,7 @@ import bookTrack2 from '../../assets/FlutterBookTrack2.png';
 import unloadly from '../../assets/Unloadly.png';
 import jobAppTrack from '../../assets/JobApplicationsTracker.png';
 import noteJewel from '../../assets/noteJewel_AI.png';
+import finSensei from '../../assets/finsenseiAI.png';
 
 function Projects() {
   const [currentSlide, setCurrentSlide] = useState({
@@ -55,6 +56,8 @@ function Projects() {
   };
 
   const backEndProjects = [
+    { src: finSensei, link: "https://finsensei.vercel.app/dashboard", h3: "finSensei", p: "AI assisted coaching financial mangement tracking system." },
+    { src: noteJewel, link: "https://notejewel.vercel.app/", h3: "Note Jewel", p: "an AI assisted noet taking app." },
     { src: jobAppTrack, link: "https://github.com/rdeniele/JobApplicationTracker.git", h3: "Job Applications Tracker", p: "Job Applications Tracker CRUD using C#, ASP.Net framework with PostGresSQL " },
     { src: KanokanoImage, link: "https://github.com/rdeniele/coffee_shop2", h3: "Kanokano Coffee Shop", p: "Coffee CRUD and POS system developed using Laravel" },
     { src: LBMSImage, link: "https://github.com/rdeniele/coffee_shop2", h3: "Library Management System", p: "Library Management System with CRUD developed using native PHP" },
@@ -63,18 +66,17 @@ function Projects() {
     { src: BudYetImage, link: "https://github.com/Lowkiiii/bud_yet/tree/master", h3: "Bud Yet", p: "Finance Tracking System with CRUD developed using Laravel, Tailwind, ShadCN, and Typescript" },
     { src: EmployImage, link: "https://github.com/rdeniele/employment_management", h3: "Employment Management System", p: "Employment CRUD using Code Igniter" },
     { src: SignItOnImage, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "Sign it On", p: "ASL-to-Text-to-Speech Web App using Django & TensorFlow" },
-    { src: noteJewel, link: "https://notejewel.vercel.app/", h3: "Note Jewel", p: "an AI assisted noet taking app." },
   ];
 
   const aiProjects = [
+    { src: finSensei, link: "https://finsensei.vercel.app/dashboard", h3: "finSensei", p: "AI assisted coaching financial mangement tracking system." },
+    { src: noteJewel, link: "https://notejewel.vercel.app/", h3: "Note Jewel", p: "an AI assisted noet taking app." },
     { src: Sign2Image, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "Sign it On", p: "ASL-to-Text-to-Speech Web App using Django & TensorFlow" },
     { src: BattLife, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "Battery Life Prediction", p: "Predict battery life using Linear Regression" },
     { src: BoxMatch, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "Boxing Match Prediction", p: "Predict boxing winners using Logistic Regression" },
     { src: CpuTemp, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "CPU Temp Prediction", p: "Predict laptop CPU temp using Linear Regression" },
     { src: mmaMatch, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "MMA Match Prediction", p: "Predict MMA Match using Decision Tree" },
     { src: parrot, link: "https://github.com/rdeniele/ASL_TO_TEXT_WEB.git", h3: "Parrot Species Prediction", p: "Predict Parrot Species using SVC" },
-    { src: noteJewel, link: "https://notejewel.vercel.app/", h3: "Note Jewel", p: "an AI assisted noet taking app." },
-
   ];
 
   const gamedevProjects = [
